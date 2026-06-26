@@ -660,44 +660,89 @@
     color: var(--cyan);
   }
 
-  /* ── VIDEO DEMO SECTION ── */
+  /* ───────── VIDEO DEMO SECTION ───────── */
+
+.video-demo {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 48px;
+  margin: 80px auto;
+  max-width: 1100px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.video-item {
+  margin-bottom: 20px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #000;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.video-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 82px;
+  height: 82px;
+  border: none;
+  border-radius: 50%;
+  background: #ff0000;
+  color: #fff;
+  font-size: 34px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  transition: 0.2s;
+}
+
+.play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+@media (max-width: 768px) {
   .video-demo {
-    background: var(--card);
-    border-radius: 24px;
-    padding: 48px;
-    margin: 80px auto;
-    max-width: 1100px;
+    padding: 30px 20px;
   }
+
   .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: 1fr;
   }
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  .video-item {
-    margin-bottom: 20px;
-  }
-  @media (max-width: 768px) {
-    .video-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
 
   /* ── WHY IT WORKS ── */
   .why-works {
@@ -1434,6 +1479,24 @@
   </div>
 </section>
 
+<!-- PAIN SECTION -->
+<section class="pain-section">
+  <h2 class="pain-title">😩 REALITI RAMAI CREATOR TIKTOK AFFILIATE SEKARANG</h2>
+  <p style="font-size: 18px; max-width: 700px; margin: 0 auto 40px; line-height: 1.7;">
+    Tak tahu nak buat video apa setiap hari<br>
+    Skrip nampak kosong & tak meyakinkan<br>
+    Video tak cukup "menarik" untuk stop scroll<br>
+    Cuba AI tapi output terlalu complicated<br>
+    Burn kredit AI tapi hasil tak convert<br><br>
+    Akhirnya…<br>
+    👉 produk ada<br>
+    👉 akaun ada<br>
+    👉 tapi sales tak bergerak<br><br>
+    Bukan sebab produk tak bagus.<br>
+    Tapi sebab content tak cukup menarik untuk jual.
+  </p>
+</section>
+
 <!-- SOLUTION -->
 <section class="solution-section">
   <div class="solution-badge">✦ PENYELESAIAN ✦</div>
@@ -1516,69 +1579,49 @@
 <!-- CONTOH VIDEO YANG DIHASILKAN -->
 <section class="video-demo">
   <p class="section-eyebrow">CONTOH VIDEO YANG DIHASILKAN</p>
-  <h2 class="section-title">Lihat Hasil Video Sebenar Dari Sistem Ini</h2>
+
+  <h2 class="section-title">
+    Lihat Hasil Video Sebenar Dari Sistem Ini
+  </h2>
+
   <p class="section-desc">
-    Video dihasilkan menggunakan prompt dari sistem ini. Boleh guna format sama untuk produk anda.
+    Video dihasilkan menggunakan prompt dari sistem ini.
+    Boleh guna format sama untuk produk anda.
   </p>
-  
+
   <div class="video-grid">
+
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe 
-          width="100%" 
-          height="315" 
-          src="https://www.youtube.com/embed/nrS05Mt7pRg" 
-          title="Contoh Video 1" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+      <div class="video-wrapper youtube" data-video="nrS05Mt7pRg">
+        <img src="https://img.youtube.com/vi/nrS05Mt7pRg/maxresdefault.jpg" alt="">
+        <button class="play-btn">▶</button>
       </div>
     </div>
-    
+
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe 
-          width="100%" 
-          height="315" 
-          src="https://www.youtube.com/embed/utIuYNKxpjc" 
-          title="Contoh Video 2" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+      <div class="video-wrapper youtube" data-video="utIuYNKxpjc">
+        <img src="https://img.youtube.com/vi/utIuYNKxpjc/maxresdefault.jpg" alt="">
+        <button class="play-btn">▶</button>
       </div>
     </div>
-    
+
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe 
-          width="100%" 
-          height="315" 
-          src="https://www.youtube.com/embed/Etm5m_YW2_I" 
-          title="Contoh Video 3" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+      <div class="video-wrapper youtube" data-video="Etm5m_YW2_I">
+        <img src="https://img.youtube.com/vi/Etm5m_YW2_I/maxresdefault.jpg" alt="">
+        <button class="play-btn">▶</button>
       </div>
     </div>
-    
+
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe 
-          width="100%" 
-          height="315" 
-          src="https://www.youtube.com/embed/BaRTs6mU7hA" 
-          title="Contoh Video 4" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+      <div class="video-wrapper youtube" data-video="BaRTs6mU7hA">
+        <img src="https://img.youtube.com/vi/BaRTs6mU7hA/maxresdefault.jpg" alt="">
+        <button class="play-btn">▶</button>
       </div>
     </div>
+
   </div>
 </section>
+
 
 <!-- KENAPA BERKESAN -->
 <section class="why-works">
@@ -1905,6 +1948,87 @@ document.querySelectorAll('.faq-question').forEach(button => {
   });
 });
 </script>
+<script src="https://www.youtube.com/iframe_api"></script>
 
+<script>
+let activePlayer = null;
+let activeWrapper = null;
+
+/* ───────── CREATE PLAYER ───────── */
+function createPlayer(wrapper, videoId) {
+
+  const playerDiv = document.createElement("div");
+  wrapper.innerHTML = "";
+  wrapper.appendChild(playerDiv);
+
+  return new YT.Player(playerDiv, {
+    videoId: videoId,
+    playerVars: {
+      autoplay: 1,          // ✅ autoplay ON
+      mute: 1,              // ✅ muted (enable autoplay works)
+      rel: 0,
+      modestbranding: 1,
+      playsinline: 1
+    },
+    events: {
+      onReady: function (event) {
+        event.target.mute();      // 🔥 force mute (reliable)
+        event.target.playVideo(); // autoplay start
+      },
+      onStateChange: function (event) {
+
+        // bila video habis
+        if (event.data === YT.PlayerState.ENDED) {
+          resetToThumbnail(wrapper, videoId);
+        }
+
+      }
+    }
+  });
+
+}
+
+/* ───────── RESET THUMBNAIL ───────── */
+function resetToThumbnail(wrapper, videoId) {
+
+  wrapper.innerHTML = `
+    <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="">
+    <button class="play-btn">▶</button>
+  `;
+
+  attachClick(wrapper);
+}
+
+/* ───────── CLICK HANDLER ───────── */
+function attachClick(wrapper) {
+
+  wrapper.onclick = function () {
+
+    const videoId = wrapper.dataset.video;
+
+    // stop video lama
+    if (activePlayer) {
+      activePlayer.stopVideo();
+    }
+
+    // reset video lain
+    if (activeWrapper && activeWrapper !== wrapper) {
+      resetToThumbnail(activeWrapper, activeWrapper.dataset.video);
+    }
+
+    activeWrapper = wrapper;
+    activePlayer = createPlayer(wrapper, videoId);
+  };
+}
+
+/* ───────── INIT ───────── */
+function onYouTubeIframeAPIReady() {
+
+  document.querySelectorAll(".video-wrapper.youtube").forEach(wrapper => {
+    attachClick(wrapper);
+  });
+
+}
+</script>
 </body>
 </html>
