@@ -82,11 +82,12 @@ form.append(
 Link akses produk anda:
 
 https://3d-cartoon-ai.vercel.app
+
 password:789123
 
 Simpan email ini untuk rujukan anda.
 
-Selamat menggunakan sistem.`"
+Selamat menggunakan sistem.`
 );
 
 
@@ -95,6 +96,11 @@ form.append(
 "https://3dcartoon-ai.vercel.app/thankyou.html"
 );
 
+form.append(
+"billExternalReferenceNo",
+Date.now().toString()
+);
+  
 // callback
 form.append(
 "billCallbackUrl",
