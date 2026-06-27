@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terima Kasih - TikTok 3D Cartoon AI System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Gunakan CSS yang sama dari index.html */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #FF2D55;
+    --cyan: #00F2EA;
+    --purple: #7B5CF6;
+    --gold: #FFB700;
+    --bg: #070B14;
+    --card: #0F1420;
+    --card2: #141B2D;
+    --border: rgba(255,255,255,0.07);
+    --text: #F0F0F5;
+    --muted: #6B7A9A;
+    --radius: 16px;
+    --font: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    flex: 1;
+  }
+
+  .thank-you-section {
+    text-align: center;
+    background: var(--card);
+    border-radius: 24px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+  }
+
+  .success-icon {
+    font-size: 80px;
+    margin-bottom: 24px;
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  @keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .thank-you-title {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--red), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .thank-you-subtitle {
+    font-size: 20px;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+
+  .order-details {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .order-details h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--cyan);
+  }
+
+  .order-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-item:last-child {
+    border-bottom: none;
+  }
+
+  .info-label {
+    color: var(--muted);
+  }
+
+  .info-value {
+    font-weight: 600;
+  }
+
+  .next-steps {
+    background: linear-gradient(135deg, rgba(0,242,234,0.1) 0%, rgba(0,242,234,0.05) 100%);
+    border: 1px solid rgba(0,242,234,0.3);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+
+  .next-steps h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--cyan);
+  }
+
+  .steps-list {
+    text-align: left;
+    list-style: none;
+  }
+
+  .steps-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--cyan);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .contact-support {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .contact-support p {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .support-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--red);
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s;
+  }
+
+  .support-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="thank-you-section">
+    <div class="success-icon">✅</div>
+    <h1 class="thank-you-title">Pembayaran Berjaya!</h1>
+    <p class="thank-you-subtitle">Terima kasih atas pembelian anda. Akses sistem akan dihantar ke emel anda dalam masa 5 minit.</p>
+  </div>
+
+  <div class="order-details">
+    <h3>Butiran Pesanan</h3>
+    <div class="order-info">
+      <div class="info-item">
+        <span class="info-label">ID Transaksi:</span>
+        <span class="info-value" id="transactionId">-</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Nama:</span>
+        <span class="info-value" id="customerName">-</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Emel:</span>
+        <span class="info-value" id="customerEmail">-</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Jumlah:</span>
+        <span class="info-value">RM39</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Tarikh:</span>
+        <span class="info-value" id="orderDate">-</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="next-steps">
+    <h3>Langkah Seterusnya</h3>
+    <ul class="steps-list">
+      <li>
+        <div class="step-number">1</div>
+        <div>Periksa emel anda untuk link akses sistem</div>
+      </li>
+      <li>
+        <div class="step-number">2</div>
+        <div>Klik link akses untuk mula guna sistem</div>
+      </li>
+      <li>
+        <div class="step-number">3</div>
+        <div>Mulakan hasilkan video 3D cartoon viral</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="contact-support">
+    <p>Jika anda tidak menerima email akses dalam 5 minit, sila hubungi kami.</p>
+    <a href="mailto:support@tiktokai.system" class="support-btn">Hubungi Sokongan</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2023 TikTok 3D Cartoon AI System. Hak Cipta Terpelihara.</p>
+</footer>
+
+<script>
+// Get URL parameters
+function getUrlParameter(name) {
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  const results = regex.exec(location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+// Check if coming from ToyyibPay
+window.addEventListener('load', function() {
+  const transactionId = getUrlParameter('transaction_id');
+  const name = getUrlParameter('name');
+  const email = getUrlParameter('email');
+  const phone = getUrlParameter('phone');
+  
+  if (transactionId && name && email) {
+    // Valid purchase from ToyyibPay
+    displayOrderDetails(transactionId, name, email, phone);
+    sendPurchaseData(transactionId, name, email, phone);
+  } else {
+    // Not coming from ToyyibPay, redirect to home
+    window.location.href = 'index.html';
+  }
+});
+
+function displayOrderDetails(transactionId, name, email, phone) {
+  // Update order details
+  document.getElementById('transactionId').textContent = transactionId;
+  document.getElementById('customerName').textContent = name;
+  document.getElementById('customerEmail').textContent = email;
+  
+  if (phone) {
+    // Add phone display if available
+    const phoneElement = document.createElement('div');
+    phoneElement.className = 'info-item';
+    phoneElement.innerHTML = `
+      <span class="info-label">Telefon:</span>
+      <span class="info-value">${phone}</span>
+    `;
+    document.querySelector('.order-info').appendChild(phoneElement);
+  }
+  
+  // Set order date
+  document.getElementById('orderDate').textContent = new Date().toLocaleString('ms-MY');
+}
+
+function sendPurchaseData(transactionId, name, email, phone) {
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbymyxHbZCZ6wmtk8GZRdFmlNTUxczVX2-VZNAqJunjwHoJFPKqYKBU7Jhr9hXvV3-OA/exec'; // Ganti dengan URL anda
+  
+  fetch(scriptUrl, {
+    method: 'POST',
+    body: JSON.stringify({
+      action: 'recordPurchase',
+      transactionId: transactionId,
+      name: name,
+      email: email,
+      phone: phone,
+      timestamp: new Date().toISOString()
+    })
+  })
+  .then(response => response.json())
+  .then(result => {
+    console.log('Purchase recorded:', result);
+    
+    // Start email countdown
+    startEmailCountdown();
+  })
+  .catch(error => {
+    console.error('Error recording purchase:', error);
+    // Still start countdown even if recording failed
+    startEmailCountdown();
+  });
+}
+
+function startEmailCountdown() {
+  const countdownElement = document.createElement('div');
+  countdownElement.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,242,234,0.1);
+    border: 1px solid rgba(0,242,234,0.3);
+    border-radius: 12px;
+    padding: 16px 24px;
+    font-size: 14px;
+    color: var(--cyan);
+    z-index: 1000;
+  `;
+  countdownElement.innerHTML = `
+    <strong>Akses sistem akan dihantar dalam:</strong>
+    <div id="countdown" style="font-size: 24px; font-weight: 700; margin-top: 8px;">5:00</div>
+  `;
+  document.body.appendChild(countdownElement);
+  
+  let timeLeft = 300; // 5 minutes in seconds
+  
+  const countdownInterval = setInterval(() => {
+    timeLeft--;
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    document.getElementById('countdown').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    
+    if (timeLeft <= 0) {
+      clearInterval(countdownInterval);
+      countdownElement.remove();
+      
+      // Show success message
+      showEmailSent();
+    }
+  }, 1000);
+}
+
+function showEmailSent() {
+  const successMessage = document.createElement('div');
+  successMessage.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,242,234,0.1);
+    border: 1px solid rgba(0,242,234,0.3);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    z-index: 1000;
+  `;
+  successMessage.innerHTML = `
+    <div style="font-size: 48px; margin-bottom: 16px;">✉️</div>
+    <h3 style="color: var(--cyan); margin-bottom: 12px;">Telah Dihantar!</h3>
+    <p style="color: var(--text);">Akses sistem telah dihantar ke emel anda.</p>
+  `;
+  document.body.appendChild(successMessage);
+  
+  // Remove after 5 seconds
+  setTimeout(() => {
+    successMessage.remove();
+  }, 5000);
+}
+</script>
+</body>
+</html>
