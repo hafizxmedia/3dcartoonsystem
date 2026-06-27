@@ -1955,7 +1955,21 @@ document.querySelectorAll('.faq-question').forEach(button => {
   });
 });
 </script>
-<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+document.querySelectorAll('.play-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const wrapper = this.parentElement;
+    const videoId = wrapper.dataset.video;
+    wrapper.innerHTML = `
+      <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    `;
+  });
+});
+</script>
 
 <script>
 let activePlayer = null;
