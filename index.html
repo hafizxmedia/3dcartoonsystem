@@ -1886,8 +1886,16 @@
     </div>
     <div class="pricing-unit">(Harga asal RM69 - Harga pengenalan terhad) <br> sekali bayar • akses kekal</div>
 
-
+<!-- BUTTON ASAL
     <a class="btn-buy" href="#">Dapatkan Akses Sekarang →</a>
+    -->
+   
+   <a 
+class="btn-buy"
+onclick="buyNow()">
+Dapatkan Akses Sekarang →
+</a>
+   
     <p class="pricing-note">
       Selepas bayar, link akses sistem dihantar terus. Boleh mula guna hari ini.<br><br>
       ⚠️ Nota: Sistem ini menghasilkan prompt, bukan video terus. Anda perlu copy-paste ke Google Flow untuk generate video.<br><br>
@@ -2025,5 +2033,54 @@ function onYouTubeIframeAPIReady() {
 
 }
 </script>
+<script>
+
+async function buyNow(){
+
+const btn =
+document.querySelector(".btn-buy");
+
+
+btn.innerHTML =
+"Sila tunggu...";
+
+
+const response =
+await fetch(
+"/api/create-bill",
+{
+method:"POST"
+}
+);
+
+
+const data =
+await response.json();
+
+
+
+if(data[0].BillCode){
+
+
+window.location.href =
+"https://toyyibpay.com/"
++
+data[0].BillCode;
+
+
+}
+else{
+
+alert(
+"Gagal create bill"
+);
+
+}
+
+
+}
+
+</script>
+ 
 </body>
 </html>
