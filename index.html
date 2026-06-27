@@ -872,7 +872,45 @@
     color: var(--muted);
   }
 
-  /* ── SIAPA SESUAI ── */
+  /* ── FUNNY ANGRY ── */
+  .angry-mode {
+    background: linear-gradient(135deg, #140A00, #1F0F00);
+    border-radius: 24px;
+    padding: 48px;
+    margin-top: 80px;
+    text-align: center;
+  }
+  .angry-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: var(--gold);
+  }
+  .angry-desc {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .angry-examples {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .angry-bubble {
+    background: rgba(255,183,0,0.08);
+    border: 1px solid rgba(255,183,0,0.2);
+    border-radius: 16px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 300px;
+  }
+
+  /* ── FOR WHO ── */
   .for-who {
     margin-top: 80px;
   }
@@ -1097,52 +1135,6 @@
     color: var(--cyan);
   }
 
-  /* ── BONUS SECTION ── */
-  .bonus-section {
-    background: linear-gradient(135deg, rgba(0,242,234,0.1), rgba(0,242,234,0.05));
-    border-radius: 20px;
-    padding: 40px;
-    margin: 40px 0;
-    text-align: center;
-  }
-  .bonus-badge {
-    background: rgba(0,242,234,0.15);
-    border: 1px solid rgba(0,242,234,0.4);
-    color: var(--cyan);
-    font-size: 14px;
-    font-weight: 700;
-    padding: 8px 20px;
-    border-radius: 100px;
-    display: inline-block;
-    margin-bottom: 20px;
-  }
-  .bonus-title {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 16px;
-    color: var(--cyan);
-  }
-  .bonus-desc {
-    font-size: 18px;
-    color: var(--muted);
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.7;
-  }
-  .bonus-features {
-    list-style: none;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  .bonus-features li {
-    padding: 8px 0;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
   /* ── PRICING ── */
   .pricing-section {
     padding: 80px 24px;
@@ -1188,29 +1180,17 @@
     color: var(--muted);
     margin-bottom: 36px;
   }
-  .pricing-compare {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  .price-normal {
-    font-size: 18px;
-    color: var(--muted);
-    text-decoration: line-through;
-  }
-  .price-intro {
-    font-size: 32px;
+  .pricing-price {
+    font-size: 56px;
     font-weight: 900;
-    color: var(--red);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
   }
-  .discount-badge {
-    background: var(--red);
-    color: white;
-    font-size: 14px;
-    padding: 4px 12px;
-    border-radius: 20px;
+  .pricing-price .currency {
+    font-size: 24px;
+    font-weight: 600;
+    vertical-align: super;
   }
   .pricing-unit {
     font-size: 14px;
@@ -1294,6 +1274,7 @@
     .before-after { grid-template-columns: 1fr; }
     .step { grid-template-columns: 60px 1fr; }
     .step-num { width: 60px; height: 60px; font-size: 18px; }
+    .angry-examples { flex-direction: column; align-items: center; }
     
     /* Imagine Section Responsive */
     .imagine-section {
@@ -1362,7 +1343,21 @@
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
 
-  <div class="badge-tag">✨ HARGA PENGENALAN RM39 – AKAN NAIK KE RM69 ✨</div>
+  <div class="mascot-wrap">
+    <div class="mascot-body">
+      <div class="mascot-face">
+        <div class="mascot-eyes">
+          <div class="mascot-eye"></div>
+          <div class="mascot-eye"></div>
+        </div>
+        <div class="mascot-mouth"></div>
+      </div>
+    </div>
+    <div class="mascot-hand mascot-hand-left"></div>
+    <div class="mascot-hand mascot-hand-right"></div>
+  </div>
+
+  <div class="badge-tag">✦ 3D Cartoon AI System ✦</div>
 
   <h1 class="hero-title">
     Tukar Gambar Produk<br>
@@ -1593,13 +1588,6 @@
       </div>
     </div>
 
-   <div class="video-item">
-      <div class="video-wrapper youtube" data-video="nrS05Mt7pRg">
-        <img src="https://img.youtube.com/vi/nrS05Mt7pRg/maxresdefault.jpg" alt="">
-        <button class="play-btn">▶</button>
-      </div>
-    </div>
-
     <div class="video-item">
       <div class="video-wrapper youtube" data-video="Etm5m_YW2_I">
         <img src="https://img.youtube.com/vi/Etm5m_YW2_I/maxresdefault.jpg" alt="">
@@ -1734,6 +1722,19 @@
       <div class="format-pill">*Viral Hook</div>
       <div class="format-pill">*Funny Angry Rant</div>
     </div>
+  </div>
+</section>
+
+<!-- FUNNY ANGRY MODE -->
+<section class="angry-mode">
+  <h2 class="angry-title">😤 FUNNY ANGRY RANT — VIRAL BOOSTER</h2>
+  <p class="angry-desc">
+    Mode khas buat character "mengamuk" secara comel — reaksi berlebihan ala Pixar comedy yang buat orang stop scroll dalam 3 saat pertama.
+  </p>
+  <div class="angry-examples">
+    <div class="angry-bubble">"Saya dah lama boleh bantu kau tau 😤"</div>
+    <div class="angry-bubble">"Kenapa baru sekarang jumpa saya?!"</div>
+    <div class="angry-bubble">"Tengok lah tangan saya ni… penat dah tunggu nak tolong korang!"</div>
   </div>
 </section>
 
@@ -1876,17 +1877,6 @@
   </div>
 </section>
 
-<!-- BONUS SECTION -->
-<section class="bonus-section">
-  <div class="bonus-badge">🎁 BONUS TERHAD</div>
-  <h2 class="bonus-title">BONUS: Sistem Jimat Kredit AI</h2>
-  <p class="bonus-desc">
-    Version ringkas – prompt lebih pendek, kurang scene, tapi sama powerful untuk jual.
-  </p>
-  <ul class="bonus-features">
-  </ul>
-</section>
-
 <!-- PRICING -->
 <section id="pricing" class="pricing-section">
   <h2 class="pricing-title">Dapatkan Akses Sistem Sekarang</h2>
@@ -1895,12 +1885,9 @@
     <div class="pricing-name">TikTok 3D Cartoon AI Prompt System</div>
     <div class="pricing-desc">Dapatkan prompt lengkap untuk hasilkan video viral dengan Google Flow</div>
 
-    <div class="pricing-compare">
-      <div class="price-normal">RM69</div>
-      <div class="price-intro">RM39</div>
-      <div class="discount-badge">Harga Pengenalan</div>
+    <div class="pricing-price">
+      <span class="currency">RM</span>39
     </div>
-
     <div class="pricing-unit">sekali bayar • akses kekal</div>
 
     <a class="btn-buy" href="#">Dapatkan Akses Sekarang →</a>
@@ -1909,9 +1896,6 @@
       ⚠️ Nota: Sistem ini menghasilkan prompt, bukan video terus. Anda perlu copy-paste ke Google Flow untuk generate video.<br><br>
       🛡️ Dilindungi dengan jaminan 7 hari refund 100%.
     </p>
-  </div>
-  <div class="urgency-timer">
-    <p>⏰ Harga pengenalan RM39 sahaja – akan dinaikkan kepada RM69 selepas kuota terpenuhi.</p>
   </div>
 </section>
 
@@ -1958,27 +1942,83 @@ document.querySelectorAll('.faq-question').forEach(button => {
 
 <script>
 let activePlayer = null;
-let activeVideos = document.querySelectorAll('.video-wrapper.youtube');
+let activeWrapper = null;
 
-activeVideos.forEach(wrapper => {
-  wrapper.addEventListener('click', () => {
-    let videoId = wrapper.dataset.video;
-    if (activePlayer && activePlayer.getVideoId() !== videoId) {
-      activePlayer.destroy();
-    }
-    if (!activePlayer || activePlayer.getVideoId() !== videoId) {
-      activePlayer = new YT.Player(wrapper, {
-        videoId: videoId,
-        playerVars: {
-          'playsinline': 1,
-          'rel': 0,
-          'modestbranding': 1
+/* ───────── CREATE PLAYER ───────── */
+function createPlayer(wrapper, videoId) {
+
+  const playerDiv = document.createElement("div");
+  wrapper.innerHTML = "";
+  wrapper.appendChild(playerDiv);
+
+  return new YT.Player(playerDiv, {
+    videoId: videoId,
+    playerVars: {
+      autoplay: 0,          // ✅ autoplay ON
+      mute: 0,              // ✅ muted (enable autoplay works)
+      rel: 0,
+      modestbranding: 1,
+      playsinline: 1
+    },
+    events: {
+      onReady: function (event) {
+        //event.target.mute();      // 🔥 force mute (reliable)
+        event.target.playVideo(); // autoplay start
+      },
+      onStateChange: function (event) {
+
+        // bila video habis
+        if (event.data === YT.PlayerState.ENDED) {
+          resetToThumbnail(wrapper, videoId);
         }
-      });
+
+      }
     }
   });
-});
-</script>
 
+}
+
+/* ───────── RESET THUMBNAIL ───────── */
+function resetToThumbnail(wrapper, videoId) {
+
+  wrapper.innerHTML = `
+    <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="">
+    <button class="play-btn">▶</button>
+  `;
+
+  attachClick(wrapper);
+}
+
+/* ───────── CLICK HANDLER ───────── */
+function attachClick(wrapper) {
+
+  wrapper.onclick = function () {
+
+    const videoId = wrapper.dataset.video;
+
+    // stop video lama
+    if (activePlayer) {
+      activePlayer.stopVideo();
+    }
+
+    // reset video lain
+    if (activeWrapper && activeWrapper !== wrapper) {
+      resetToThumbnail(activeWrapper, activeWrapper.dataset.video);
+    }
+
+    activeWrapper = wrapper;
+    activePlayer = createPlayer(wrapper, videoId);
+  };
+}
+
+/* ───────── INIT ───────── */
+function onYouTubeIframeAPIReady() {
+
+  document.querySelectorAll(".video-wrapper.youtube").forEach(wrapper => {
+    attachClick(wrapper);
+  });
+
+}
+</script>
 </body>
 </html>
