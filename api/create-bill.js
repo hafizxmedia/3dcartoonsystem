@@ -30,12 +30,7 @@ form.append(
 
 form.append(
 "billDescription",
-`TikTok 3D Cartoon AI System
-
-Akses produk:
-https://3d-cartoon-ai.vercel.app
-
-Terima kasih kerana membeli.`
+"3D Cartoon AI System - Akses dihantar melalui email selepas pembayaran"
 );
 
 
