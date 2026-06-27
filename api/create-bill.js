@@ -75,12 +75,31 @@ form.append(
 "1"
 );
 
+form.append(
+"billContentEmail",
+`Terima kasih atas pembelian anda.
+
+Link akses produk anda:
+
+https://3d-cartoon-ai.vercel.app
+password:789123
+
+Simpan email ini untuk rujukan anda.
+
+Selamat menggunakan sistem.`"
+);
+
 
 form.append(
 "billReturnUrl",
 "https://3dcartoon-ai.vercel.app/thankyou.html"
 );
 
+// callback
+form.append(
+"billCallbackUrl",
+"https://3dcartoon-ai.vercel.app/api/callback"
+);
 
 
 const response =
