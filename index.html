@@ -2285,16 +2285,19 @@ function sendPurchaseDataToGoogleScript(transactionId, name, email, phone) {
   const scriptUrl = 'https://script.google.com/macros/s/AKfycbymyxHbZCZ6wmtk8GZRdFmlNTUxczVX2-VZNAqJunjwHoJFPKqYKBU7Jhr9hXvV3-OA/exec'; // URL anda
   
   return fetch(scriptUrl, {
-    method: 'POST',
-    body: JSON.stringify({
-      action: 'recordPurchase',
-      transactionId: transactionId,
-      name: name,
-      email: email,
-      phone: phone,
-      timestamp: new Date().toISOString()
-    })
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    action: 'recordPurchase',
+    transactionId: transactionId,
+    name: name,
+    email: email,
+    phone: phone,
+    timestamp: new Date().toISOString()
   })
+})
   .then(response => response.json())
   .then(data => {
     if (data.status !== 'success') {
