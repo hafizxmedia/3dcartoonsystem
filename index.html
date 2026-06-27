@@ -872,45 +872,7 @@
     color: var(--muted);
   }
 
-  /* ── FUNNY ANGRY ── */
-  .angry-mode {
-    background: linear-gradient(135deg, #140A00, #1F0F00);
-    border-radius: 24px;
-    padding: 48px;
-    margin-top: 80px;
-    text-align: center;
-  }
-  .angry-title {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 24px;
-    color: var(--gold);
-  }
-  .angry-desc {
-    font-size: 18px;
-    color: var(--muted);
-    max-width: 700px;
-    margin: 0 auto 40px;
-    line-height: 1.7;
-  }
-  .angry-examples {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .angry-bubble {
-    background: rgba(255,183,0,0.08);
-    border: 1px solid rgba(255,183,0,0.2);
-    border-radius: 16px;
-    padding: 16px 24px;
-    font-size: 16px;
-    font-weight: 600;
-    max-width: 300px;
-  }
-
-  /* ── FOR WHO ── */
+  /* ── SIAPA SESUAI ── */
   .for-who {
     margin-top: 80px;
   }
@@ -1135,6 +1097,52 @@
     color: var(--cyan);
   }
 
+  /* ── BONUS SECTION ── */
+  .bonus-section {
+    background: linear-gradient(135deg, rgba(0,242,234,0.1), rgba(0,242,234,0.05));
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .bonus-badge {
+    background: rgba(0,242,234,0.15);
+    border: 1px solid rgba(0,242,234,0.4);
+    color: var(--cyan);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .bonus-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--cyan);
+  }
+  .bonus-desc {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+  }
+  .bonus-features {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .bonus-features li {
+    padding: 8px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   /* ── PRICING ── */
   .pricing-section {
     padding: 80px 24px;
@@ -1235,52 +1243,6 @@
     line-height: 1.6;
   }
 
-  /* ── BONUS SECTION ── */
-  .bonus-section {
-    background: linear-gradient(135deg, rgba(0,242,234,0.1), rgba(0,242,234,0.05));
-    border-radius: 20px;
-    padding: 40px;
-    margin: 40px 0;
-    text-align: center;
-  }
-  .bonus-badge {
-    background: rgba(0,242,234,0.15);
-    border: 1px solid rgba(0,242,234,0.4);
-    color: var(--cyan);
-    font-size: 14px;
-    font-weight: 700;
-    padding: 8px 20px;
-    border-radius: 100px;
-    display: inline-block;
-    margin-bottom: 20px;
-  }
-  .bonus-title {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 16px;
-    color: var(--cyan);
-  }
-  .bonus-desc {
-    font-size: 18px;
-    color: var(--muted);
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.7;
-  }
-  .bonus-features {
-    list-style: none;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  .bonus-features li {
-    padding: 8px 0;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
   /* ── FINAL CTA ── */
   .final-cta {
     padding: 100px 24px;
@@ -1332,7 +1294,6 @@
     .before-after { grid-template-columns: 1fr; }
     .step { grid-template-columns: 60px 1fr; }
     .step-num { width: 60px; height: 60px; font-size: 18px; }
-    .angry-examples { flex-direction: column; align-items: center; }
     
     /* Imagine Section Responsive */
     .imagine-section {
@@ -1400,20 +1361,6 @@
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
-
-  <div class="mascot-wrap">
-    <div class="mascot-body">
-      <div class="mascot-face">
-        <div class="mascot-eyes">
-          <div class="mascot-eye"></div>
-          <div class="mascot-eye"></div>
-        </div>
-        <div class="mascot-mouth"></div>
-      </div>
-    </div>
-    <div class="mascot-hand mascot-hand-left"></div>
-    <div class="mascot-hand mascot-hand-right"></div>
-  </div>
 
   <div class="badge-tag">✨ HARGA PENGENALAN RM39 – AKAN NAIK KE RM69 ✨</div>
 
@@ -1790,7 +1737,6 @@
   </div>
 </section>
 
-
 <!-- SIAPA SESUAI -->
 <section>
   <p class="section-eyebrow">SIAPA YANG SESUAI GUNA</p>
@@ -1937,7 +1883,8 @@
   <p class="bonus-desc">
     Version ringkas – prompt lebih pendek, kurang scene, tapi sama powerful untuk jual.
   </p>
-  
+  <ul class="bonus-features">
+  </ul>
 </section>
 
 <!-- PRICING -->
@@ -1964,7 +1911,7 @@
     </p>
   </div>
   <div class="urgency-timer">
-    <p>⏰ Harga pengenalan RM39 sahaja – akan dinaikkan kepada RM69 selepas kuota penuh.</p>
+    <p>⏰ Harga pengenalan RM39 sahaja – akan dinaikkan kepada RM69 selepas kuota terpenuhi.</p>
   </div>
 </section>
 
