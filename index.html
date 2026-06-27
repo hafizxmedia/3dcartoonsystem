@@ -2059,7 +2059,10 @@ await response.json();
 
 
 
-if(data[0].BillCode){
+console.log("ToyyibPay response:", data);
+
+
+if(data && data[0] && data[0].BillCode){
 
 
 window.location.href =
@@ -2072,10 +2075,11 @@ data[0].BillCode;
 else{
 
 alert(
-"Gagal create bill"
+"Bill gagal dibuat. Sila check console."
 );
 
 }
+
 
 
 }
