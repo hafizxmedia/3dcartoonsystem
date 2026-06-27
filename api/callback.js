@@ -6,29 +6,17 @@ return res.status(405).send("Not allowed");
 }
 
 
-const {
-status,
-refno,
-billcode,
-amount,
-hash
-}=req.body;
-
+const data=req.body;
 
 
 console.log(
 "TOYYIB CALLBACK",
-{
-status,
-refno,
-billcode,
-amount
-}
+data
 );
 
 
-// SUCCESS
-if(status==="1"){
+
+if(String(data.status)==="1"){
 
 
 console.log(
@@ -36,15 +24,10 @@ console.log(
 );
 
 
-// nanti letak:
-// - Meta Purchase
-// - TikTok Pixel
-// - database
-// - email automation
+// Purchase nanti sini
 
 
 }
-
 
 
 res.status(200).send("OK");
