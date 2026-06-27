@@ -1328,6 +1328,33 @@
       font-size: 20px;
     }
   }
+ .checkout-box{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:20px;
+padding:30px;
+max-width:450px;
+margin:30px auto;
+}
+
+
+.checkout-box input{
+width:100%;
+padding:16px;
+margin-bottom:15px;
+border-radius:12px;
+border:1px solid var(--border);
+background:#111827;
+color:white;
+font-size:16px;
+}
+
+
+.checkout-box h3{
+margin-bottom:20px;
+}
+
+ 
 </style>
 </head>
 <body>
@@ -1873,6 +1900,41 @@
   </div>
 </section>
 
+<div id="checkoutForm" class="checkout-box" style="display:none;">
+
+<h3>Dapatkan Akses Sekarang</h3>
+
+<input 
+id="custName"
+type="text"
+placeholder="Nama penuh"
+required>
+
+
+<input 
+id="custEmail"
+type="email"
+placeholder="Email"
+required>
+
+
+<input 
+id="custPhone"
+type="text"
+placeholder="No telefon"
+required>
+
+
+<button 
+onclick="processPayment()"
+class="btn-buy">
+Teruskan Pembayaran →
+</button>
+
+
+</div>
+
+ 
 <!-- PRICING -->
 <section id="pricing" class="pricing-section">
   <h2 class="pricing-title">Dapatkan Akses Sistem Sekarang</h2>
@@ -1890,11 +1952,13 @@
     <a class="btn-buy" href="#">Dapatkan Akses Sekarang →</a>
     -->
    
-   <a 
+   <button 
 class="btn-buy"
-onclick="buyNow()">
+onclick="showCheckout()">
+
 Dapatkan Akses Sekarang →
-</a>
+
+</button>
    
     <p class="pricing-note">
       Selepas bayar, link akses sistem dihantar terus. Boleh mula guna hari ini.<br><br>
@@ -2035,34 +2099,78 @@ function onYouTubeIframeAPIReady() {
 </script>
 <script>
 
-async function buyNow(){
+function showCheckout(){
 
-const btn =
-document.querySelector(".btn-buy");
+document.getElementById("checkoutForm")
+.style.display="block";
 
 
-btn.innerHTML =
-"Sila tunggu...";
+document.getElementById("checkoutForm")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+
+async function processPayment(){
+
+
+const name =
+document.getElementById("custName").value;
+
+
+const email =
+document.getElementById("custEmail").value;
+
+
+const phone =
+document.getElementById("custPhone").value;
+
+
+
+if(!name || !email || !phone){
+
+alert("Sila isi semua maklumat");
+
+return;
+
+}
+
 
 
 const response =
 await fetch(
 "/api/create-bill",
 {
-method:"POST"
-}
-);
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+name,
+email,
+phone
+
+})
+
+});
 
 
 const data =
 await response.json();
 
 
+console.log(data);
 
-console.log("ToyyibPay response:", data);
 
 
-if(data && data[0] && data[0].BillCode){
+if(data[0]?.BillCode){
 
 
 window.location.href =
@@ -2074,9 +2182,11 @@ data[0].BillCode;
 }
 else{
 
+
 alert(
-"Bill gagal dibuat. Sila check console."
+"Payment gagal dibuat"
 );
+
 
 }
 
