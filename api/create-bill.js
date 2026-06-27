@@ -24,7 +24,7 @@ process.env.TOYYIB_CATEGORY
 
 form.append(
 "billName",
-"TikTok 3D Cartoon AI Prompt System"
+"3DCartoonAI System"
 );
 
 
