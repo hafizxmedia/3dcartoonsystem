@@ -1,5 +1,12 @@
 export default async function handler(req, res) {
 
+const body=req.body;
+
+
+const name=body.name;
+const email=body.email;
+const phone=body.phone;
+
 if (req.method !== "POST") {
 return res.status(405).json({
 error:"Method not allowed"
@@ -43,6 +50,23 @@ form.append(
 form.append(
 "billAmount",
 "3900"
+);
+
+form.append(
+"billTo",
+name
+);
+
+
+form.append(
+"billEmail",
+email
+);
+
+
+form.append(
+"billPhone",
+phone
 );
 
 
