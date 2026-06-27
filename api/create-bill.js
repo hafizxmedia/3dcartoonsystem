@@ -37,7 +37,7 @@ form.append(
 
 form.append(
 "billDescription",
-"3D Cartoon AI System - Akses dihantar melalui email selepas pembayaran"
+"AKSES PENUH SISTEM DAN BONUS Akan Dihantar Terus Ke Email Anda Selepas Pembayaran Dibuat."
 );
 
 
