@@ -1328,6 +1328,129 @@
       font-size: 20px;
     }
   }
+
+  /* Modal Pembayaran */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background: var(--card);
+  margin: 5% auto;
+  padding: 40px;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: slideIn 0.3s;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.close:hover {
+  color: var(--text);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--cyan);
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255,45,85,0.35);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.spinner {
+  border: 3px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  border-top: 3px solid var(--cyan);
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 </style>
 </head>
 <body>
@@ -1873,6 +1996,38 @@
   </div>
 </section>
 
+<!-- Modal Pembayaran -->
+<div id="purchaseModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Dapatkan Akses Sistem</h3>
+    
+    <form id="paymentForm">
+      <div class="form-group">
+        <label for="userName">Nama Penuh</label>
+        <input type="text" id="userName" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="userEmail">Emel</label>
+        <input type="email" id="userEmail" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="userPhone">Nombor Telefon</label>
+        <input type="tel" id="userPhone" required>
+      </div>
+      
+      <button type="submit" class="btn-submit">Buat Pembayaran RM39</button>
+    </form>
+    
+    <div class="loading">
+      <div class="spinner"></div>
+      <p style="margin-top: 10px; color: var(--muted);">Mengarah ke ToyyibPay...</p>
+    </div>
+  </div>
+</div>
+
 <!-- PRICING -->
 <section id="pricing" class="pricing-section">
   <h2 class="pricing-title">Dapatkan Akses Sistem Sekarang</h2>
@@ -2025,5 +2180,155 @@ function onYouTubeIframeAPIReady() {
 
 }
 </script>
+
+<!-- Modal Pembayaran -->
+<div id="purchaseModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Dapatkan Akses Sistem</h3>
+    
+    <form id="paymentForm">
+      <div class="form-group">
+        <label for="userName">Nama Penuh</label>
+        <input type="text" id="userName" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="userEmail">Emel</label>
+        <input type="email" id="userEmail" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="userPhone">Nombor Telefon</label>
+        <input type="tel" id="userPhone" required>
+      </div>
+      
+      <button type="submit" class="btn-submit">Buat Pembayaran RM39</button>
+    </form>
+    
+    <div class="loading">
+      <div class="spinner"></div>
+      <p style="margin-top: 10px; color: var(--muted);">Mengarah ke ToyyibPay...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Modal Functions
+function openModal() {
+  document.getElementById('purchaseModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('purchaseModal').style.display = 'none';
+  resetForm();
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('purchaseModal');
+  if (event.target == modal) {
+    closeModal();
+  }
+}
+
+// Form Submission
+document.getElementById('paymentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Show loading
+  document.querySelector('.btn-submit').style.display = 'none';
+  document.querySelector('.loading').style.display = 'block';
+  
+  // Get form data
+  const userName = document.getElementById('userName').value;
+  const userEmail = document.getElementById('userEmail').value;
+  const userPhone = document.getElementById('userPhone').value;
+  
+  // Generate unique transaction ID
+  const transactionId = 'TXN-' + Date.now();
+  
+  // Store user data in session storage
+  sessionStorage.setItem('transactionData', JSON.stringify({
+    transactionId: transactionId,
+    name: userName,
+    email: userEmail,
+    phone: userPhone,
+    timestamp: new Date().toISOString()
+  }));
+  
+  // Create ToyyibPay bill
+  createToyyibPayBill(transactionId, userName, userEmail, userPhone);
+});
+
+function createToyyibPayBill(transactionId, name, email, phone) {
+  // Get bill details from your ToyyibPay account
+  const billCode = 'TikTok-3D-Cartoon-AI-System2'; // Ganti dengan bill code anda
+  const categoryCode = 'ewlyo6oy'; // Ganti dengan category code anda
+  
+  // First, send purchase data to Google Apps Script
+  sendPurchaseDataToGoogleScript(transactionId, name, email, phone)
+    .then(() => {
+      // After data is sent, create ToyyibPay bill URL
+      const billUrl = `https://toyyibpay.com/${billCode}?category=${categoryCode}&amount=39&transaction_id=${transactionId}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&redirect_url=${encodeURIComponent('https://3dcartoon-ai.vercel.app/thankyou.html')}`;
+      
+      // Redirect to ToyyibPay
+      window.location.href = billUrl;
+    })
+    .catch(error => {
+      console.error('Error sending purchase data:', error);
+      alert('Terjadi ralat. Sila cuba lagi.');
+    });
+}
+
+function sendPurchaseDataToGoogleScript(transactionId, name, email, phone) {
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbymyxHbZCZ6wmtk8GZRdFmlNTUxczVX2-VZNAqJunjwHoJFPKqYKBU7Jhr9hXvV3-OA/exec'; // URL anda
+  
+  return fetch(scriptUrl, {
+    method: 'POST',
+    body: JSON.stringify({
+      action: 'recordPurchase',
+      transactionId: transactionId,
+      name: name,
+      email: email,
+      phone: phone,
+      timestamp: new Date().toISOString()
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status !== 'success') {
+      throw new Error('Failed to record purchase');
+    }
+    return data;
+  });
+}
+
+function resetForm() {
+  document.getElementById('paymentForm').reset();
+  document.querySelector('.btn-submit').style.display = 'block';
+  document.querySelector('.loading').style.display = 'none';
+}
+
+// Update semua "Dapatkan Akses Sekarang" button
+document.querySelectorAll('.btn-buy').forEach(button => {
+  button.onclick = openModal;
+});
+
+// Smooth scroll for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
