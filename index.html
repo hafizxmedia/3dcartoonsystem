@@ -1934,8 +1934,8 @@ margin-bottom:20px;
 </section>
 
 <div id="checkoutForm" class="checkout-box" style="display:none;">
-
-<h3>Dapatkan Akses Sekarang</h3>
+<h2>TikTok 3D Cartoon AI System</h2>
+<h3>Dapatkan akses penuh sistem dan bonus sekarang!</h3>
 
 <input 
 id="custName"
@@ -2170,6 +2170,16 @@ alert("Sila isi semua maklumat");
 return;
 
 }
+
+ // 🟢 InitiateCheckout
+  fbq('track', 'InitiateCheckout', {
+    value: 39.00,
+    currency: 'MYR',
+    content_name: '3DCartoonAI System',
+    content_ids: ['3DCARTOON-AI-001'],
+    content_type: 'product'
+  });
+
 
 
 
