@@ -117,6 +117,15 @@ Boleh hubungi admin di haafizxmedia@gmail.com jika ada sebarang pertanyaan.
 `;
 
 
+      // Hanya trigger Purchase jika status === 1
+      fbq('track', 'Purchase', {
+        value: 39.00,
+        currency: 'MYR',
+        content_name: '3DCartoonAI System',
+        content_ids: ['3DCARTOON-AI-001'],
+        content_type: 'product'
+      });
+
 }
 
 
